@@ -2,9 +2,9 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.1;net5.0;net6.0</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.0.2</Version>
+    <Version>0.0.1</Version>
     <RepositoryUrl>https://github.com/JustinBritt/DiscreteHalfNormal</RepositoryUrl>
-    <Description>Description</Description>
+    <Description>Partial implementation of Kemp's discrete half normal distribution</Description>
     <Copyright>2021</Copyright>
   </PropertyGroup>
 
