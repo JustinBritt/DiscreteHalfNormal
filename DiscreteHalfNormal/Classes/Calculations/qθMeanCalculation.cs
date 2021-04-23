@@ -49,7 +49,7 @@
         /// <param name="θUpperBound">Upper bound for θ</param>
         /// <param name="tolerance">Tolerance</param>
         /// <returns>ReadOnlySpan of <see cref="qθMeanCalculationElement"/> values where |<paramref name="targetMean"/> - calculatedMean| <= <paramref name="tolerance"/></returns>
-        public ReadOnlySpan<qθMeanCalculationElement> Calculate(
+        public unsafe ReadOnlySpan<qθMeanCalculationElement> Calculate(
             double qLowerBound,
             double qStep,
             double qUpperBound,
