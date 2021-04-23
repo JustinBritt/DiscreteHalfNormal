@@ -17,9 +17,12 @@
         {
             double sum = 0;
 
-            for (int x = 0; x <= xUpperBound; x = x + 1)
+            fixed (xCpCalculationElement * xCpPtr = xCp)
             {
-                sum += xCp[x].Cp;
+                for (int x = 0; x <= xUpperBound; x = x + 1)
+                {
+                    sum += (*(xCpPtr + x)).Cp;
+                }
             }
 
             return sum;
