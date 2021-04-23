@@ -25,13 +25,13 @@
             return factory;
         }
 
-        public IqθMeanCalculationFactory CreateqθMeanCalculationFactory()
+        public IqθμCalculationFactory CreateqθμCalculationFactory()
         {
-            IqθMeanCalculationFactory factory = null;
+            IqθμCalculationFactory factory = null;
 
             try
             {
-                factory = new qθMeanCalculationFactory();
+                factory = new qθμCalculationFactory();
             }
             finally
             {

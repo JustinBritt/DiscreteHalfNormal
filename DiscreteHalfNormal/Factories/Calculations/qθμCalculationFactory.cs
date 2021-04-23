@@ -4,20 +4,20 @@
     using DiscreteHalfNormal.Interfaces.Calculations;
     using DiscreteHalfNormal.InterfacesFactories.Calculations;
 
-    internal sealed class qθMeanCalculationFactory : IqθMeanCalculationFactory
+    internal sealed class qθμCalculationFactory : IqθμCalculationFactory
     {
-        public qθMeanCalculationFactory()
+        public qθμCalculationFactory()
         {
         }
 
-        public IqθMeanCalculation Create(
+        public IqθμCalculation Create(
             int xUpperBound)
         {
-            IqθMeanCalculation calculation = null;
+            IqθμCalculation calculation = null;
 
             try
             {
-                calculation = new qθMeanCalculation(
+                calculation = new qθμCalculation(
                     xUpperBound);
             }
             finally

@@ -2,9 +2,9 @@
 {
     using DiscreteHalfNormal.Interfaces.Calculations;
 
-    public interface IqθMeanCalculationFactory
+    public interface IqθμCalculationFactory
     {
-        IqθMeanCalculation Create(
+        IqθμCalculation Create(
             int xUpperBound);
     }
 }

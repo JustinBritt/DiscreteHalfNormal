@@ -7,16 +7,16 @@
     using DiscreteHalfNormal.InterfacesAbstractFactories;
     using DiscreteHalfNormal.Structs.CalculationElements;
 
-    internal sealed class qθMeanCalculation : IqθMeanCalculation
+    internal sealed class qθμCalculation : IqθμCalculation
     {
-        public qθMeanCalculation(
+        public qθμCalculation(
             int xUpperBound)
         {
             IAbstractFactory abstractFactory = AbstractFactory.Create();
 
             this.CCalculation = abstractFactory.CreateCalculationsAbstractFactory().CreateCCalculationFactory().Create();
 
-            this.MeanCalculation = abstractFactory.CreateCalculationsAbstractFactory().CreateMeanCalculationFactory().Create();
+            this.μCalculation = abstractFactory.CreateCalculationsAbstractFactory().CreateμCalculationFactory().Create();
 
             this.xCpCalculation = abstractFactory.CreateCalculationsAbstractFactory().CreatexCpCalculationFactory().Create(
                 xUpperBound);
@@ -31,7 +31,7 @@
 
         private ICCalculation CCalculation { get; }
 
-        private IμCalculation MeanCalculation { get; }
+        private IμCalculation μCalculation { get; }
 
         private IxCpCalculation xCpCalculation { get; }
 
@@ -95,21 +95,21 @@
                             xUpperBound,
                             θ);
 
-                        double calculatedMean = this.MeanCalculation.Calculate(
+                        double calculatedμ = this.μCalculation.Calculate(
                             q,
                             xp.ToArray(),
                             xUpperBound,
                             θ);
 
-                        if (calculatedMean >= 0)
+                        if (calculatedμ >= 0)
                         {
-                            if (Math.Abs(targetMean - calculatedMean) <= tolerance)
+                            if (Math.Abs(targetMean - calculatedμ) <= tolerance)
                             {
                                 *(qθMeanSpanPtr + numberAccepted) =
                                     new qθMeanCalculationElement(
                                         q,
                                         θ,
-                                        calculatedMean);
+                                        calculatedμ);
 
                                 numberAccepted += 1;
                             }

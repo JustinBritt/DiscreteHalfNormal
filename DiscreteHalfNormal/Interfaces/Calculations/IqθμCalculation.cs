@@ -4,7 +4,7 @@
 
     using DiscreteHalfNormal.Structs.CalculationElements;
 
-    public interface IqθMeanCalculation : IDisposable
+    public interface IqθμCalculation : IDisposable
     {
         IxpCalculation xpCalculation { get; }
 

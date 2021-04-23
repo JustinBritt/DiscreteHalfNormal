@@ -6,7 +6,7 @@
     {
         ICCalculationFactory CreateCCalculationFactory();
 
-        IqθMeanCalculationFactory CreateqθMeanCalculationFactory();
+        IqθμCalculationFactory CreateqθμCalculationFactory();
 
         IxCpCalculationFactory CreatexCpCalculationFactory();
 
