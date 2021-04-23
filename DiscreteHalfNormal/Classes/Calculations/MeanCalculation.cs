@@ -11,7 +11,7 @@
         {
         }
 
-        public double Calculate(
+        public unsafe double Calculate(
             double q,
             ReadOnlySpan<xpCalculationElement> xp,
             int xUpperBound,
