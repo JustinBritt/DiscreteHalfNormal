@@ -31,14 +31,17 @@
 
             xCpSpan.Clear();
 
-            for (int x = 0; x <= xUpperBound; x = x + 1)
+            fixed (xCpCalculationElement * xCpSpanPtr = xCpSpan)
             {
-                xCpSpan[x] =
-                    new xCpCalculationElement(
-                        x,
-                        Math.Pow(θ, x)
-                        *
-                        Math.Pow(q, (int)(x * (x - 1) * 0.5)));
+                for (int x = 0; x <= xUpperBound; x = x + 1)
+                {
+                    *(xCpSpanPtr + x) =
+                        new xCpCalculationElement(
+                            x,
+                            Math.Pow(θ, x)
+                            *
+                            Math.Pow(q, (int)(x * (x - 1) * 0.5)));
+                }
             }
 
             return xCpSpan;
