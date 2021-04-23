@@ -20,6 +20,13 @@
 
         private IntPtr xCpIntPtr { get; }
 
+        /// <summary>
+        /// Calculates x, C * p.
+        /// </summary>
+        /// <param name="q">q</param>
+        /// <param name="xUpperBound">Upper bound for x</param>
+        /// <param name="θ">θ</param>
+        /// <returns>x, C * p</returns>
         public unsafe ReadOnlySpan<xCpCalculationElement> Calculate(
             double q,
             int xUpperBound,
