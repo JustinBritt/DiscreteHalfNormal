@@ -4,7 +4,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Version>0.0.1</Version>
     <RepositoryUrl>https://github.com/JustinBritt/DiscreteHalfNormal</RepositoryUrl>
-    <Description>Partial implementation of Kemp's discrete half normal distribution</Description>
+    <Description>Partial implementation of Kemp's discrete half-normal distribution</Description>
     <Copyright>2021</Copyright>
   </PropertyGroup>
 
