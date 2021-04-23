@@ -16,10 +16,19 @@
             this.Mean = mean;
         }
 
+        /// <summary>
+        /// q
+        /// </summary>
         public double q { get; }
 
+        /// <summary>
+        /// θ
+        /// </summary>
         public double θ { get; }
 
+        /// <summary>
+        /// Mean μ
+        /// </summary>
         public double Mean { get; }
     }
 }
