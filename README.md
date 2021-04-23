@@ -7,7 +7,7 @@ the means. The method uses these range and step values to calculate means and th
 
 # Application
 The current application of this is to generate patient length of stay distributions. For this application, xUpperBound and targetMean correspond to the maximum allowed and mean, respectively, lengths of stay.
-The q, θ, and calculated mean triples can then be sampled from to generate different scenarios, where each scenario has approximately the same mean.
+The q, θ, and calculated mean triples can then be sampled from in order  to generate different scenarios, where each scenario has approximately the same mean.
 
 # Future Work
 This could be extended to also generate q, θ, and calculated variance triples. This would allow for the generation of scenarios with different means but approximately the same variance.
