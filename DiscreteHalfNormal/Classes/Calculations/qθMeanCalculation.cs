@@ -72,42 +72,45 @@
 
             qθMeanSpan.Clear();
 
-            for (double θ = θLowerBound; θ < θUpperBound; θ = θ + θStep)
+            fixed (qθMeanCalculationElement * qθMeanSpanPtr = qθMeanSpan)
             {
-                for (double q = qLowerBound; q < qUpperBound; q = q + qStep)
+                for (double θ = θLowerBound; θ < θUpperBound; θ = θ + θStep)
                 {
-                    ReadOnlySpan<xCpCalculationElement> xCp = this.xCpCalculation.Calculate(
-                        q,
-                        xUpperBound,
-                        θ);
-
-                    double C = this.CCalculation.Calculate(
-                        xCp,
-                        xUpperBound);
-
-                    ReadOnlySpan<xpCalculationElement> xp = this.xpCalculation.Calculate(
-                        C,
-                        q,
-                        xUpperBound,
-                        θ);
-
-                    double calculatedMean = this.MeanCalculation.Calculate(
-                        q,
-                        xp.ToArray(),
-                        xUpperBound,
-                        θ);
-
-                    if (calculatedMean >= 0)
+                    for (double q = qLowerBound; q < qUpperBound; q = q + qStep)
                     {
-                        if (Math.Abs(targetMean - calculatedMean) <= tolerance)
-                        {
-                            qθMeanSpan[numberAccepted] = 
-                                new qθMeanCalculationElement(
-                                    q,
-                                    θ,
-                                    calculatedMean);
+                        ReadOnlySpan<xCpCalculationElement> xCp = this.xCpCalculation.Calculate(
+                            q,
+                            xUpperBound,
+                            θ);
 
-                            numberAccepted += 1;
+                        double C = this.CCalculation.Calculate(
+                            xCp,
+                            xUpperBound);
+
+                        ReadOnlySpan<xpCalculationElement> xp = this.xpCalculation.Calculate(
+                            C,
+                            q,
+                            xUpperBound,
+                            θ);
+
+                        double calculatedMean = this.MeanCalculation.Calculate(
+                            q,
+                            xp.ToArray(),
+                            xUpperBound,
+                            θ);
+
+                        if (calculatedMean >= 0)
+                        {
+                            if (Math.Abs(targetMean - calculatedMean) <= tolerance)
+                            {
+                                *(qθMeanSpanPtr + numberAccepted) =
+                                    new qθMeanCalculationElement(
+                                        q,
+                                        θ,
+                                        calculatedMean);
+
+                                numberAccepted += 1;
+                            }
                         }
                     }
                 }
