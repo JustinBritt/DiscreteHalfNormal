@@ -48,8 +48,8 @@
         /// <param name="θStep">Step for θ</param>
         /// <param name="θUpperBound">Upper bound for θ</param>
         /// <param name="tolerance">Tolerance</param>
-        /// <returns>ReadOnlySpan of <see cref="qθMeanCalculationElement"/> values where |<paramref name="targetMean"/> - calculatedMean| <= <paramref name="tolerance"/></returns>
-        public unsafe ReadOnlySpan<qθMeanCalculationElement> Calculate(
+        /// <returns>ReadOnlySpan of <see cref="qθμCalculationElement"/> values where |<paramref name="targetMean"/> - calculatedMean| <= <paramref name="tolerance"/></returns>
+        public unsafe ReadOnlySpan<qθμCalculationElement> Calculate(
             double qLowerBound,
             double qStep,
             double qUpperBound,
@@ -62,19 +62,19 @@
         {
             int numberAccepted = 0;
 
-            qθMeanCalculationElement[] qθMeanArray = new qθMeanCalculationElement[
+            qθμCalculationElement[] qθμArray = new qθμCalculationElement[
                 1
                 +
                 (int)Math.Ceiling((qUpperBound - qLowerBound) / qStep)
                 *
                 (int)Math.Ceiling((θUpperBound - θLowerBound) / θStep)];
 
-            Span<qθMeanCalculationElement> qθMeanSpan = new Span<qθMeanCalculationElement>(
-                qθMeanArray);
+            Span<qθμCalculationElement> qθμSpan = new Span<qθμCalculationElement>(
+                qθμArray);
 
-            qθMeanSpan.Clear();
+            qθμSpan.Clear();
 
-            fixed (qθMeanCalculationElement * qθMeanSpanPtr = qθMeanSpan)
+            fixed (qθμCalculationElement * qθμSpanPtr = qθμSpan)
             {
                 for (double θ = θLowerBound; θ < θUpperBound; θ = θ + θStep)
                 {
@@ -105,8 +105,8 @@
                         {
                             if (Math.Abs(targetMean - calculatedμ) <= tolerance)
                             {
-                                *(qθMeanSpanPtr + numberAccepted) =
-                                    new qθMeanCalculationElement(
+                                *(qθμSpanPtr + numberAccepted) =
+                                    new qθμCalculationElement(
                                         q,
                                         θ,
                                         calculatedμ);
@@ -118,7 +118,7 @@
                 }
             }
 
-            return qθMeanSpan.Slice(
+            return qθμSpan.Slice(
                 0,
                 numberAccepted);
         }

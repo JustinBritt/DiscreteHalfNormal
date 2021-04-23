@@ -21,8 +21,8 @@
         /// <param name="θStep">Step for θ</param>
         /// <param name="θUpperBound">Upper bound for θ</param>
         /// <param name="tolerance">Tolerance</param>
-        /// <returns>ReadOnlySpan of <see cref="qθMeanCalculationElement"/> values where |<paramref name="targetMean"/> - calculatedMean| <= <paramref name="tolerance"/></returns>
-        ReadOnlySpan<qθMeanCalculationElement> Calculate(
+        /// <returns>ReadOnlySpan of <see cref="qθμCalculationElement"/> values where |<paramref name="targetMean"/> - calculatedMean| <= <paramref name="tolerance"/></returns>
+        ReadOnlySpan<qθμCalculationElement> Calculate(
             double qLowerBound,
             double qStep,
             double qUpperBound,

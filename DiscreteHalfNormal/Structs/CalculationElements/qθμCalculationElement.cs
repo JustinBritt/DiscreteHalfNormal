@@ -1,19 +1,19 @@
 ﻿namespace DiscreteHalfNormal.Structs.CalculationElements
 {
-    public struct qθMeanCalculationElement
+    public struct qθμCalculationElement
     {
         public const int SizeInBytes = 32;
 
-        public qθMeanCalculationElement(
+        public qθμCalculationElement(
             double q,
             double θ,
-            double mean)
+            double μ)
         {
             this.q = q;
 
             this.θ = θ;
 
-            this.Mean = mean;
+            this.μ = μ;
         }
 
         /// <summary>
@@ -29,6 +29,6 @@
         /// <summary>
         /// Mean μ
         /// </summary>
-        public double Mean { get; }
+        public double μ { get; }
     }
 }
