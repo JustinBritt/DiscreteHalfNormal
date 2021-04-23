@@ -42,18 +42,18 @@
         /// <param name="qLowerBound">Lower bound for q</param>
         /// <param name="qStep">Step for q</param>
         /// <param name="qUpperBound">Upper bound for q</param>
-        /// <param name="targetMean">Target mean</param>
+        /// <param name="targetμ">Target mean</param>
         /// <param name="xUpperBound">Upper bound for x</param>
         /// <param name="θLowerBound">Lower bound for θ</param>
         /// <param name="θStep">Step for θ</param>
         /// <param name="θUpperBound">Upper bound for θ</param>
         /// <param name="tolerance">Tolerance</param>
-        /// <returns>ReadOnlySpan of <see cref="qθμCalculationElement"/> values where |<paramref name="targetMean"/> - calculatedMean| <= <paramref name="tolerance"/></returns>
+        /// <returns>ReadOnlySpan of <see cref="qθμCalculationElement"/> values where |<paramref name="targetμ"/> - calculatedμ| <= <paramref name="tolerance"/></returns>
         public unsafe ReadOnlySpan<qθμCalculationElement> Calculate(
             double qLowerBound,
             double qStep,
             double qUpperBound,
-            double targetMean,
+            double targetμ,
             int xUpperBound,
             double θLowerBound,
             double θStep,
@@ -103,7 +103,7 @@
 
                         if (calculatedμ >= 0)
                         {
-                            if (Math.Abs(targetMean - calculatedμ) <= tolerance)
+                            if (Math.Abs(targetμ - calculatedμ) <= tolerance)
                             {
                                 *(qθμSpanPtr + numberAccepted) =
                                     new qθμCalculationElement(
