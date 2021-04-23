@@ -48,7 +48,7 @@
         /// <param name="θStep">Step for θ</param>
         /// <param name="θUpperBound">Upper bound for θ</param>
         /// <param name="tolerance">Tolerance</param>
-        /// <returns>ReadOnlySpan of <see cref="qθμCalculationElement"/> values where |<paramref name="targetμ"/> - calculatedμ| <= <paramref name="tolerance"/></returns>
+        /// <returns>ReadOnlySpan of <see cref="qθμCalculationElement"/> values where |<paramref name="targetμ"/> - calculatedμ| &lt;= <paramref name="tolerance"/></returns>
         public unsafe ReadOnlySpan<qθμCalculationElement> Calculate(
             double qLowerBound,
             double qStep,
