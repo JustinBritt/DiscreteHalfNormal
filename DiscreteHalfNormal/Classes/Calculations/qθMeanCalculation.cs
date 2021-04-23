@@ -31,7 +31,7 @@
 
         private ICCalculation CCalculation { get; }
 
-        private IMeanCalculation MeanCalculation { get; }
+        private IμCalculation MeanCalculation { get; }
 
         private IxCpCalculation xCpCalculation { get; }
 

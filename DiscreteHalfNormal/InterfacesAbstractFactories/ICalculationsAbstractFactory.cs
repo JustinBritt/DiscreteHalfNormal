@@ -6,12 +6,12 @@
     {
         ICCalculationFactory CreateCCalculationFactory();
 
-        IMeanCalculationFactory CreateMeanCalculationFactory();
-
         IqθMeanCalculationFactory CreateqθMeanCalculationFactory();
 
         IxCpCalculationFactory CreatexCpCalculationFactory();
 
         IxpCalculationFactory CreatexpCalculationFactory();
+
+        IμCalculationFactory CreateμCalculationFactory();
     }
 }

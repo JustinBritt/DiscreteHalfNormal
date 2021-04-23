@@ -2,8 +2,8 @@
 {
     using DiscreteHalfNormal.Interfaces.Calculations;
 
-    public interface IMeanCalculationFactory
+    public interface IμCalculationFactory
     {
-        IMeanCalculation Create();
+        IμCalculation Create();
     }
 }

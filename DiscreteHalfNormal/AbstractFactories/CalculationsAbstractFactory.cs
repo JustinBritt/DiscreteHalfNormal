@@ -25,21 +25,6 @@
             return factory;
         }
 
-        public IMeanCalculationFactory CreateMeanCalculationFactory()
-        {
-            IMeanCalculationFactory factory = null;
-
-            try
-            {
-                factory = new MeanCalculationFactory();
-            }
-            finally
-            {
-            }
-
-            return factory;
-        }
-
         public IqθMeanCalculationFactory CreateqθMeanCalculationFactory()
         {
             IqθMeanCalculationFactory factory = null;
@@ -77,6 +62,21 @@
             try
             {
                 factory = new xpCalculationFactory();
+            }
+            finally
+            {
+            }
+
+            return factory;
+        }
+
+        public IμCalculationFactory CreateμCalculationFactory()
+        {
+            IμCalculationFactory factory = null;
+
+            try
+            {
+                factory = new μCalculationFactory();
             }
             finally
             {

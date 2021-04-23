@@ -4,7 +4,7 @@
 
     using DiscreteHalfNormal.Structs.CalculationElements;
 
-    public interface IMeanCalculation
+    public interface IμCalculation
     {
         /// <summary>
         /// Calculates the mean μ.

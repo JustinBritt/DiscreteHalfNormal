@@ -4,19 +4,19 @@
     using DiscreteHalfNormal.Interfaces.Calculations;
     using DiscreteHalfNormal.InterfacesFactories.Calculations;
 
-    internal sealed class MeanCalculationFactory : IMeanCalculationFactory
+    internal sealed class μCalculationFactory : IμCalculationFactory
     {
-        public MeanCalculationFactory()
+        public μCalculationFactory()
         {
         }
 
-        public IMeanCalculation Create()
+        public IμCalculation Create()
         {
-            IMeanCalculation calculation = null;
+            IμCalculation calculation = null;
 
             try
             {
-                calculation = new MeanCalculation();
+                calculation = new μCalculation();
             }
             finally
             {

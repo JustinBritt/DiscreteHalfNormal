@@ -5,9 +5,9 @@
     using DiscreteHalfNormal.Interfaces.Calculations;
     using DiscreteHalfNormal.Structs.CalculationElements;
 
-    internal sealed class MeanCalculation : IMeanCalculation
+    internal sealed class μCalculation : IμCalculation
     {
-        public MeanCalculation()
+        public μCalculation()
         {
         }
 
