@@ -63,6 +63,8 @@
             int numberAccepted = 0;
 
             qθMeanCalculationElement[] qθMeanArray = new qθMeanCalculationElement[
+                1
+                +
                 (int)Math.Ceiling((qUpperBound - qLowerBound) / qStep)
                 *
                 (int)Math.Ceiling((θUpperBound - θLowerBound) / θStep)];
