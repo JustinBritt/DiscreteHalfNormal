@@ -20,6 +20,13 @@
             int xUpperBound,
             double θ);
 
+        /// <summary>
+        /// Calculates x, p.
+        /// </summary>
+        /// <param name="q">q</param>
+        /// <param name="xUpperBound">Upper bound for x</param>
+        /// <param name="θ">θ</param>
+        /// <returns>x, p</returns>
         ReadOnlySpan<xpCalculationElement> Calculate(
             double q,
             int xUpperBound,
