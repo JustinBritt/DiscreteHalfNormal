@@ -19,9 +19,12 @@
         {
             double sum = 0;
 
-            for (int x = 0; x <= xUpperBound; x = x + 1)
+            fixed (xpCalculationElement * xpPtr = xp)
             {
-                sum += xp[x].x * xp[x].p;
+                for (int x = 0; x <= xUpperBound; x = x + 1)
+                {
+                    sum += (*(xpPtr + x)).x * (*(xpPtr + x)).p;
+                }
             }
 
             return sum;
