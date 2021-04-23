@@ -30,6 +30,14 @@
 
         private IntPtr xpIntPtr { get; }
 
+        /// <summary>
+        /// Calculates x, p.
+        /// </summary>
+        /// <param name="C">Normalization constant</param>
+        /// <param name="q">q</param>
+        /// <param name="xUpperBound">Upper bound for x</param>
+        /// <param name="θ">θ</param>
+        /// <returns>x, p</returns>
         public unsafe ReadOnlySpan<xpCalculationElement> Calculate(
             double C,
             double q,
