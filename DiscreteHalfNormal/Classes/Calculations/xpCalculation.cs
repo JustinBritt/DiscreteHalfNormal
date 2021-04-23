@@ -60,7 +60,7 @@
             return xpSpan;
         }
 
-        public ReadOnlySpan<xpCalculationElement> Calculate(
+        public unsafe ReadOnlySpan<xpCalculationElement> Calculate(
             double q,
             int xUpperBound,
             double θ)
