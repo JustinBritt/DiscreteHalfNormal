@@ -37,7 +37,7 @@
 
         /// <summary>
         /// This loops over a range of x, q, and θ values to find calculated means that are within the tolerance of a target mean.
-        /// Note that 0 < q < 1 and 0 < θ.
+        /// Note that 0<q<1 and 0<θ.
         /// </summary>
         /// <param name="qLowerBound">Lower bound for q</param>
         /// <param name="qStep">Step for q</param>
