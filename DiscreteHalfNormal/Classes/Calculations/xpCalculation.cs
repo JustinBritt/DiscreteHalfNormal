@@ -42,16 +42,19 @@
 
             xpSpan.Clear();
 
-            for (int x = 0; x <= xUpperBound; x = x + 1)
+            fixed (xpCalculationElement * xpSpanPtr = xpSpan)
             {
-                xpSpan[x] =
-                    new xpCalculationElement(
-                        x,
-                        Math.Pow(θ, x)
-                        *
-                        Math.Pow(q, (int)(x * (x - 1) * 0.5))
-                        *
-                        Math.Pow(C, -1));
+                for (int x = 0; x <= xUpperBound; x = x + 1)
+                {
+                    *(xpSpanPtr + x) =
+                        new xpCalculationElement(
+                            x,
+                            Math.Pow(θ, x)
+                            *
+                            Math.Pow(q, (int)(x * (x - 1) * 0.5))
+                            *
+                            Math.Pow(C, -1));
+                }
             }
 
             return xpSpan;
