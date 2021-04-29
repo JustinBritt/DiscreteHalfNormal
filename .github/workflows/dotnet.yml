@@ -23,7 +23,7 @@ jobs:
       run: dotnet test --no-build --verbosity normal
       
       # Publish
-    - name: publish nuget package
+    - name: Publish NuGet Package
       id: publish_nuget
       uses: rohith/publish-nuget@v2
       with:
