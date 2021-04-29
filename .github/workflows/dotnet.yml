@@ -22,5 +22,5 @@ jobs:
       run: dotnet build --no-restore --configuration Release
     - name: Test
       run: dotnet test --no-build --verbosity normal
-    - name: Publish NuGet Package
+    - name: Publish package
       run: dotnet nuget push D:\a\DiscreteHalfNormal\DiscreteHalfNormal\DiscreteHalfNormal\bin\Release\DiscreteHalfNormal.0.0.1.nupkg
