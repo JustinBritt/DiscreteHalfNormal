@@ -6,7 +6,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     env:
       api-key: ${{ secrets.NUGET_API_KEY }}
