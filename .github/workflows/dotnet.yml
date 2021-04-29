@@ -9,7 +9,6 @@ jobs:
     runs-on: windows-latest
     env:
       api-key: ${{ secrets.NUGET_API_KEY }}
-      github-key: ${{ GITHUB_TOKEN }}
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET
