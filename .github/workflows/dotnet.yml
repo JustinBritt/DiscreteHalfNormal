@@ -22,4 +22,4 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Publish NuGet Package
-      run: dotnet nuget push /home/runner/work/DiscreteHalfNormal/DiscreteHalfNormal/DiscreteHalfNormal/bin/Release/DiscreteHalfNormal.0.0.1.nupkg --source https://nuget.pkg.github.com/JustinBritt/index.json --api-key api-key --no-symbols
+      run: dotnet nuget push /home/runner/work/DiscreteHalfNormal/DiscreteHalfNormal/DiscreteHalfNormal/bin/Release/DiscreteHalfNormal.0.0.1.nupkg --source https://nuget.pkg.github.com/JustinBritt/index.json --api-key api-key --no-symbols true
