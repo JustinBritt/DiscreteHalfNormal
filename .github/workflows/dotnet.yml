@@ -21,5 +21,7 @@ jobs:
       run: dotnet build --no-restore --configuration Release
     - name: Test
       run: dotnet test --no-build --verbosity normal
+    - name: Add Source
+      run: dotnet nuget add source https://nuget.pkg.github.com/JustinBritt/index.json --name GitHub --username JustinBritt --password api-key
     - name: Publish NuGet Package
-      run: dotnet nuget push /home/runner/work/DiscreteHalfNormal/DiscreteHalfNormal/DiscreteHalfNormal/bin/Release/DiscreteHalfNormal.0.0.1.nupkg --source https://nuget.pkg.github.com/JustinBritt/index.json
+      run: dotnet nuget push /home/runner/work/DiscreteHalfNormal/DiscreteHalfNormal/DiscreteHalfNormal/bin/Release/DiscreteHalfNormal.0.0.1.nupkg --source GitHub
