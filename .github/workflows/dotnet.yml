@@ -9,6 +9,7 @@ jobs:
     runs-on: windows-latest
     env:
       api-key: ${{ secrets.NUGET_API_KEY }}
+      github-key: ${{ GITHUB_TOKEN }}
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET
@@ -24,4 +25,4 @@ jobs:
     - name: Add Source
       run: dotnet nuget add source https://nuget.pkg.github.com/JustinBritt/index.json --name GitHub
     - name: Publish NuGet Package
-      run: dotnet nuget push D:\a\DiscreteHalfNormal\DiscreteHalfNormal\DiscreteHalfNormal\bin\Release\DiscreteHalfNormal.0.0.1.nupkg -k api-key
+      run: dotnet nuget push D:\a\DiscreteHalfNormal\DiscreteHalfNormal\DiscreteHalfNormal\bin\Release\DiscreteHalfNormal.0.0.1.nupkg -k github-key
