@@ -8,7 +8,7 @@ jobs:
   build:
     runs-on: windows-latest
     env:
-      api-key: ${{ secrets.GITHUB_TOKEN }}
+      api-key: ${{ secrets.NUGET_API_KEY }}
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET
@@ -22,6 +22,6 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Add Source
-      run: dotnet nuget add source https://nuget.pkg.github.com/JustinBritt/index.json --name GitHub --username JustinBritt --password api-key --store-password-in-clear-text
+      run: dotnet nuget add source https://nuget.pkg.github.com/JustinBritt/index.json --name GitHub --username JustinBritt --password api-key
     - name: Publish NuGet Package
       run: dotnet nuget push D:\a\DiscreteHalfNormal\DiscreteHalfNormal\DiscreteHalfNormal\bin\Release\DiscreteHalfNormal.0.0.1.nupkg --source GitHub --api-key api-key
