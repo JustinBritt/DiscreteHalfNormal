@@ -23,7 +23,5 @@ jobs:
       run: dotnet test --no-build --verbosity normal
     - name: Add Source
       run: dotnet nuget add source https://nuget.pkg.github.com/JustinBritt/index.json --name GitHub
-    - name: Install GPR tool
-      run: dotnet tool install gpr -g
     - name: Publish NuGet Package
-      run: gpr push D:\a\DiscreteHalfNormal\DiscreteHalfNormal\DiscreteHalfNormal\bin\Release\DiscreteHalfNormal.0.0.1.nupkg -k api-key
+      run: dotnet nuget push D:\a\DiscreteHalfNormal\DiscreteHalfNormal\DiscreteHalfNormal\bin\Release\DiscreteHalfNormal.0.0.1.nupkg -k api-key
