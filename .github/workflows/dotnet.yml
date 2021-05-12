@@ -23,4 +23,4 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Publish package
-      run: dotnet nuget push /home/runner/work/DiscreteHalfNormal/DiscreteHalfNormal/DiscreteHalfNormal/bin/Release/DiscreteHalfNormal.0.0.1.nupkg
+      run: dotnet nuget push /bin/Release/"*.nupkg"
