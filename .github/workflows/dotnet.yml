@@ -24,4 +24,4 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Publish package
-      run: dotnet nuget push /home/runner/work/DiscreteHalfNormal/DiscreteHalfNormal/DiscreteHalfNormal/bin/Release/*.nupkg
+      run: dotnet nuget push ${{ github.workspace }}/${{ github.event.repository.name }}/bin/Release/*.nupkg
